@@ -34,11 +34,10 @@ class PostCard extends Component {
 
   render(){
     const {post, classes} = this.props
-
     return(
       <Grid item xs key={post.id}>
         <Card  className={classes.card}>
-          <Link to={`/posts/${post.id}`} params={{ id: post.id }}>
+          <Link to={`/${post.category}/${post.id}`} params={{ id: post.id }}>
             <CardHeader title={post.title}/>
           </Link>
           <Timestamp time={post.timestamp} format='date' className={classes.items}/>

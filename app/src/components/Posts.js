@@ -33,6 +33,7 @@ const styles = theme => ({
 class Posts extends Component{
 
   componentWillMount(){
+
     let {category} = this.props
     if(category === undefined || category === 'all'){
       this.props.fetchAllPosts()
@@ -55,6 +56,7 @@ class Posts extends Component{
 
   render(){
     const {posts, classes} = this.props
+    console.log("PROPS POSTS", this.props)
     let {filterType} = this.props
     if(filterType === ''){
        filterType = 'voteScore'
@@ -104,7 +106,7 @@ class Posts extends Component{
 const mapStateToProps = (state) => {
   return {
     posts: state.posts.posts,
-    filterType:state.posts.filterType
+    filterType:state.posts.filterType,
   }
 }
 
